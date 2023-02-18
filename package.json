@@ -1,13 +1,9 @@
 {
     "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "vite",
-        "watch": "vite watch",
-        "watch-poll": "vite watch -- --watch-options-poll=1000",
-        "hot": "vite watch --hot",
-        "prod": "npm run production",
-        "production": "vite --production"
+    "scripts": {        
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"        
     },
     "devDependencies": {
         "@inertiajs/vue3": "^1.0.0",
