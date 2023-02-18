@@ -38,8 +38,6 @@ class CdrController extends Controller
             }
         }
         
-        \Log::info(json_encode($cdr));
-
         $cdr = $cdr->get();
 
         return Inertia::render('Dashboard', ['data' => $cdr]);
