@@ -100,8 +100,8 @@
                         <td v-if="row.src.length == 4" class="text-center">Out</td>
                         <td v-else class="text-center">In</td>
 
-                        <td class="text-centertext-center">{{ row.duration }}</td>
-                        <td class="">{{ row.billsec }}</td>
+                        <td class="text-center">{{ row.duration }}</td>
+                        <td class="text-center">{{ row.billsec }}</td>
 
                         <td v-if="row.dst.substring(0,2) == '01'" class="text-center">{{ Math.round(row.billsec/10) }}</td>
                         <td v-else class="text-center">{{ Math.round(row.billsec/180) }}</td>
