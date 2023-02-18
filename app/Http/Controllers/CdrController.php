@@ -31,9 +31,9 @@ class CdrController extends Controller
         }            
 
         if ($request->filled('dst')) {
-            if($request->input('likeyes') != null) {
+            if($request->input('like') == 1) {
                 $cdr = $cdr->where('dst', 'like', '%'.$dst.'%');
-            } else if($request->input('likeno') != null) {
+            } else if($request->input('like') == 0) {
                 $cdr = $cdr->where('dst', '=', $dst);
             }
         }

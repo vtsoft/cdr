@@ -16,8 +16,7 @@
                     date_to: null,
                     src: null,
                     dst: null,
-                    likeyes: null,
-                    likeno: null,
+                    like: null,                    
                 },
             }
         },
@@ -60,9 +59,9 @@
                     <div style="width: 100px; float: left;" class="mt-1"><b>Destination</b></div>
                     <input type="text" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="dst" name="dst" v-model="form.dst">
                     &nbsp<b>like</b>&nbsp
-                    <input type="radio" class="" id="1" name="like" v-model="form.likeyes" checked>
+                    <input type="radio" class="" value="1" name="like" v-model="form.like">
                     &nbsp<b>=</b>&nbsp
-                    <input type="radio" class="" id="0" name="like" v-model="form.likeno">
+                    <input type="radio" class="" value="0" name="like" v-model="form.like">
                 </div>
 
                 <div style="width: 100px; float: left;">&nbsp</div>
