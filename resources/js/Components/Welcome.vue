@@ -2,41 +2,11 @@
     import ApplicationLogo from './ApplicationLogo.vue';
     import { computed } from 'vue'
     import { usePage } from '@inertiajs/vue3'
+    import Pagination from "@/Components/Pagination.vue";
 
-    const data = computed(() => usePage().props.data);
+    const data = computed(() => usePage().props.data.data);
+    const links = computed(() => usePage().props.data.links);
 </script>
-<script>
-    export default {
-        data() {
-            return {
-                editMode: false,
-                isOpen: false,
-                form: {
-                    date_from: null,
-                    date_to: null,
-                    src: null,
-                    dst: null,
-                    like: null,                    
-                },
-            }
-        },
-        mounted() {
-            console.log(this.form)
-        },
-        methods: {
-            search: function () {
-                console.log(this.form);
-                this.$inertia.get('/search', this.form);
-            },
-        },
-    }
-
-</script>
-<style class="">
-    .table-bordered th, .table-bordered td { 
-        border: 1px solid #ddd!important 
-    }     
-</style>
 <template>
     <div>
         <div class="p-6 lg:p-8 border-b font-semibold text-xl leading-tight">
@@ -111,6 +81,31 @@
 
                 </tbody>
             </table>
+
+            <Pagination :data="links" />
+            <br/>
+
+
         </div>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            return {
+                form: {
+                    date_from: null,
+                    date_to: null,
+                    src: null,
+                    dst: null,
+                    like: null,                    
+                },
+            }
+        },
+        methods: {
+            search: function () {
+                this.$inertia.get('/search', this.form);
+            },
+        },
+    }
+</script>

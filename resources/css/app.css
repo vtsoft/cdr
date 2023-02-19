@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.table-bordered th, .table-bordered td { 
+  border: 1px solid #ddd!important 
+}     

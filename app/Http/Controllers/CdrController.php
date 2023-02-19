@@ -10,7 +10,7 @@ class CdrController extends Controller
 {
 
     public function dashboard() {
-        $data = Cdr::all();
+        $data = Cdr::query()->paginate(20);
         return Inertia::render('Dashboard', ['data' => $data]);
     }
 
@@ -38,7 +38,7 @@ class CdrController extends Controller
             }
         }
         
-        $cdr = $cdr->get();
+        $cdr = $cdr->paginate(20);
 
         return Inertia::render('Dashboard', ['data' => $cdr]);
     }
