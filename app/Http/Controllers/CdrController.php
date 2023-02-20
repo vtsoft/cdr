@@ -9,13 +9,8 @@ use App\Models\Cdr;
 class CdrController extends Controller
 {
 
-    public function dashboard() {
-        $data = Cdr::query()->paginate(20);
-        return Inertia::render('Dashboard', ['data' => $data]);
-    }
-
-    public function search(Request $request) {
-        $cdr = Cdr::query();                
+    public function dashboard(Request $request) {
+        $cdr = Cdr::query();
         $dst = $request->input('dst');
 
         if ($request->filled('date_from')) {
@@ -38,7 +33,7 @@ class CdrController extends Controller
             }
         }
         
-        $cdr = $cdr->paginate(20);
+        $cdr = $cdr->paginate(10)->withQueryString();      
 
         return Inertia::render('Dashboard', ['data' => $cdr]);
     }

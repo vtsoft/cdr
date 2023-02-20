@@ -30,17 +30,5 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    // Route::get('/dashboard', function () {
-    //     return Inertia::render('Dashboard');
-    // })->name('dashboard');
-
-    // Route::get('/dashboard', function () {
-    //     return Inertia::render('Dashboard');
-    // })->name('dashboard');
-    
     Route::get('/dashboard', [CdrController::class, 'dashboard'])->name('dashboard');
-    Route::get('/search', [CdrController::class, 'search'])->name('search');
-
-    // Route::resource('cdr', CdrResourceController::class);
-
 });

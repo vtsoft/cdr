@@ -3,14 +3,15 @@
   
   defineProps({
       data: {
-          type: Object,
-          default: () => ({}),
-      },
+        type: Object,
+        default: () => ({}),
+      }
   });
+
 </script>  
   
 <template>
-    <div v-if="data.length > 3" class="flex justify-center mt-4 space-x-4">            
+    <div v-if="data.length > 3" class="flex justify-center mt-4 space-x-4"> 
       <Link
           v-for="(link, k) in data"
           :key="k"

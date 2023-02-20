@@ -43,7 +43,6 @@
         </div>
 
         <div class="grid-cols-1 mb-1">
-
             <table class="table w-full table-hover table-bordered">
                 <thead>
                     <tr class="">
@@ -82,9 +81,8 @@
                 </tbody>
             </table>
 
-            <Pagination :data="links" />
+            <Pagination :data="links"/>
             <br/>
-
 
         </div>
     </div>
@@ -102,9 +100,20 @@
                 },
             }
         },
+        mounted() {
+            let url = document.URL;
+            let params = url.split('?')[1];
+            if(params) {
+                let param_array = params.split('&');
+                for (let i = 0; i < param_array.length; i++) {
+                    let param = param_array[i].split('=');
+                    this.form[param[0]] = param[1];
+                }            
+            }
+        },
         methods: {
             search: function () {
-                this.$inertia.get('/search', this.form);
+                this.$inertia.get('/dashboard', this.form);
             },
         },
     }
