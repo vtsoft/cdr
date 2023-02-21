@@ -107,7 +107,9 @@
                 let param_array = params.split('&');
                 for (let i = 0; i < param_array.length; i++) {
                     let param = param_array[i].split('=');
-                    this.form[param[0]] = param[1];
+                    if(param[0] !== 'page') {
+                        this.form[param[0]] = param[1];
+                    }
                 }            
             }
         },
