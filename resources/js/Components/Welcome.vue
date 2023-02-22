@@ -15,19 +15,19 @@
         <div class="p-6 lg:p-8 bg-white border-gray-200">
 
             <form>
-                <div class="col-2">
-                    <div style="width: 100px; float: left;" class="mt-1"><b>Date</b></div>
+                <div class="">
+                    <div style="width: 100px; float: left;" class="mt-2"><b>Date</b></div>
                     <input type="date" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date_from" name="date_from" v-model="form.date_from">
                     &nbsp&nbsp<b>~</b>&nbsp&nbsp
                     <input type="date" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date_to" name="date_to" v-model="form.date_to">
                 </div>
-                <div class="col-4">
-                    <div style="width: 100px; float: left;" class="mt-1"><b>Source</b></div>
-                    <input type="text" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="src" name="src" v-model="form.src">
+                <div class="">
+                    <div style="width: 100px; float: left;" class="mt-2"><b>Source</b></div>
+                    <input type="text" class="mt-1 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="src" name="src" v-model="form.src">
                 </div>
-                <div class="col-4">
-                    <div style="width: 100px; float: left;" class="mt-1"><b>Destination</b></div>
-                    <input type="text" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="dst" name="dst" v-model="form.dst">
+                <div class="">
+                    <div style="width: 100px; float: left;" class="mt-2"><b>Destination</b></div>
+                    <input type="text" class="mt-1 shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="dst" name="dst" v-model="form.dst">
                     &nbsp<b>like</b>&nbsp
                     <input type="radio" class="" value="1" name="like" v-model="form.like">
                     &nbsp<b>=</b>&nbsp
@@ -35,14 +35,14 @@
                 </div>
 
                 <div style="width: 100px; float: left;">&nbsp</div>
-                <button @click="search(form)" type="button" class="inline-flex mt-5 justify-center rounded-md border border-gray-300 px-4 py-2 font-semibold shadow-sm hover:text-gray-500">
+                <button @click="search(form)" type="button" class="inline-flex mt-4 bg-lightseagreen-400 text-black font-bold justify-center rounded-md border px-4 py-2 font-semibold shadow-sm hover:text-white">
                     Search
                 </button>
             </form>
 
         </div>
 
-        <div class="grid-cols-1 mb-1">
+        <div class="p-6 lg:p-8">
             <table class="table w-full table-hover table-bordered">
                 <thead>
                     <tr class="">
