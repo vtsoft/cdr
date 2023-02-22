@@ -76,8 +76,12 @@
                         
                         <td class="text-center">{{ row.calldate.substring(10) }}</td>
                         <td class="text-center">{{ row.calldate.substring(0,10) }}</td>
-                    </tr>
-
+                    </tr>                                        
+                    <tr v-if="!data.length" class="">
+                        <td colspan="10" class="text-center">
+                            <h1 class="p-6 lg:p-8 w-full font-semibold text-xl leading-tight text-center">No Data!</h1>
+                        </td>
+                    </tr>                    
                 </tbody>
             </table>
 
