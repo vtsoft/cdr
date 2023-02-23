@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'dashboard' => [
+        'table_max_rows' => env('DASHBOARD_TABLE_MAX_ROWS'),
+    ],
+
 ];

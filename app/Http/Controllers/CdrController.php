@@ -28,12 +28,13 @@ class CdrController extends Controller
         if ($request->filled('dst')) {
             if($request->input('like') == 1) {
                 $cdr = $cdr->where('dst', 'like', '%'.$dst.'%');
-            } else if($request->input('like') == 0) {
+            } else {
                 $cdr = $cdr->where('dst', '=', $dst);
             }
         }
-        
-        $cdr = $cdr->paginate(10)->withQueryString();      
+
+        $table_max_rows = config('services.dashboard.table_max_rows');
+        $cdr = $cdr->paginate($table_max_rows)->withQueryString();      
 
         return Inertia::render('Dashboard', ['data' => $cdr]);
     }

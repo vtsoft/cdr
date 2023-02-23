@@ -65,10 +65,11 @@
                         <td class="text-center">{{ row.dst }}</td>                        
                         <td class="text-center">{{ row.disposition }}</td>
 
-                        <td v-if="row.src.length == 4" class="text-center">Out</td>
-                        <td v-else class="text-center">In</td>
+                        <td v-if="row.src.length == 4" class="text-center">OUT</td>
+                        <td v-else class="text-center">IN</td>
 
-                        <td class="text-center">{{ row.duration }}</td>
+                        <td v-if="row.duration != 0" class="text-center">{{ row.duration }}S</td>
+                        <td v-else class="text-center">{{ row.duration }}</td>
                         <td class="text-center">{{ row.billsec }}</td>
 
                         <td v-if="row.dst.substring(0,2) == '01'" class="text-center">{{ Math.round(row.billsec/10) }}</td>
